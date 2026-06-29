@@ -93,6 +93,7 @@
       [data-about-img]  { width: 100% !important; max-width: 100% !important; height: 260px !important; flex-shrink: 1 !important; }
       [data-desk-nav]   { display: none !important; }
       [data-hamburger]  { display: flex !important; }
+      [data-logo]       { height: 24px !important; }
     }
         @media (max-width: 860px) {
       [data-bento-grid] { grid-template-columns: 1fr !important; }
@@ -128,8 +129,8 @@
 <!-- ═══════════ NAV ═══════════ -->
 <nav style="position:fixed;inset:0 0 auto 0;z-index:1000;height:84px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(24px,5vw,120px);background:rgba(5,8,14,0);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid transparent;transition:background 0.4s ease,border-color 0.4s ease;">
 
-  <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;text-decoration:none;">
-    <img src="images/logo.png" alt="T-LogicWorks" style="height:34px;width:auto;display:block;" />
+  <a href="#" onclick="closeMobileMenu()" style="display:flex;align-items:center;text-decoration:none;">
+    <img data-logo src="images/logo.png" alt="T-LogicWorks" style="height:34px;width:auto;display:block;" />
   </a>
 
   <div data-desk-nav style="display:flex;align-items:center;gap:36px;">
@@ -138,7 +139,7 @@
     <a href="#kontakt"  style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;color:#05080e;background:linear-gradient(135deg,#50ffa0,#00d9c8);padding:12px 28px;border-radius:4px;text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;white-space:nowrap;transition:opacity 0.2s;" style-hover="opacity:0.88;">Skontaktuj się z nami</a>
   </div>
 
-  <button data-hamburger onClick="{{ toggleMenu }}" style="display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;">
+  <button data-hamburger onclick="toggleMobileMenu()" style="display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;">
     <span style="display:block;width:22px;height:2px;background:#ddeee8;border-radius:1px;"></span>
     <span style="display:block;width:22px;height:2px;background:#ddeee8;border-radius:1px;"></span>
     <span style="display:block;width:14px;height:2px;background:#ddeee8;border-radius:1px;"></span>
@@ -146,11 +147,12 @@
 </nav>
 
 <!-- Mobile menu -->
-<div style="position:fixed;inset:0;z-index:999;background:rgba(5,8,14,0.98);display:{{ mobileMenuDisplay }};flex-direction:column;align-items:center;justify-content:center;gap:44px;">
-  <a href="#o-firmie" onClick="{{ closeMenu }}" style="font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;color:#ddeee8;text-decoration:none;" style-hover="color:#50ffa0;">O Firmie</a>
-  <a href="#uslugi"   onClick="{{ closeMenu }}" style="font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;color:#ddeee8;text-decoration:none;" style-hover="color:#50ffa0;">Usługi</a>
-  <a href="#kontakt"  onClick="{{ closeMenu }}" style="font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;color:#ddeee8;text-decoration:none;" style-hover="color:#50ffa0;">Kontakt</a>
-  <a href="#kontakt"  onClick="{{ closeMenu }}" style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;color:#05080e;background:linear-gradient(135deg,#50ffa0,#00d9c8);padding:16px 48px;border-radius:4px;text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;">Bezpłatna wycena</a>
+<div id="mobile-menu" style="position:fixed;inset:0;z-index:999;background:rgba(5,8,14,0.98);display:none;flex-direction:column;align-items:center;justify-content:center;gap:44px;">
+  <button onclick="closeMobileMenu()" style="position:absolute;top:28px;right:28px;background:none;border:none;cursor:pointer;color:#ddeee8;font-size:28px;line-height:1;">&#x2715;</button>
+  <a href="#o-firmie" onclick="closeMobileMenu()" style="font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;color:#ddeee8;text-decoration:none;">O Firmie</a>
+  <a href="#uslugi"   onclick="closeMobileMenu()" style="font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;color:#ddeee8;text-decoration:none;">Usługi</a>
+  <a href="#kontakt"  onclick="closeMobileMenu()" style="font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;color:#ddeee8;text-decoration:none;">Kontakt</a>
+  <a href="#kontakt"  onclick="closeMobileMenu()" style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;color:#05080e;background:linear-gradient(135deg,#50ffa0,#00d9c8);padding:16px 48px;border-radius:4px;text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;">Bezpłatna wycena</a>
 </div>
 
 
@@ -707,6 +709,15 @@ class Component extends DCLogic {
   }
 }
 
+</script>
+<script>
+function toggleMobileMenu() {
+  var m = document.getElementById('mobile-menu');
+  m.style.display = m.style.display === 'flex' ? 'none' : 'flex';
+}
+function closeMobileMenu() {
+  document.getElementById('mobile-menu').style.display = 'none';
+}
 </script>
 </body>
 </html>
