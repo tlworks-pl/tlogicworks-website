@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+  <title>T-LogicWorks – Automatyka Przemysłowa | Milanówek</title>
+  <meta name="description" content="T-LogicWorks Tomasz Tempczyk – kompleksowe rozwiązania z zakresu automatyki przemysłowej. Programowanie PLC, systemy SCADA/HMI, projektowanie automatyki, prefabrykacja szaf elektrycznych. Milanówek, Mazowsze.">
+  <meta name="keywords" content="automatyka przemysłowa, programowanie PLC, SCADA, HMI, szafy sterownicze, montaż elektryczny, automatyka Milanówek, T-LogicWorks, sterowniki PLC, wizualizacja przemysłowa">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="T-LogicWorks Tomasz Tempczyk">
+  <meta name="geo.region" content="PL-MZ">
+  <meta name="geo.placename" content="Milanówek">
+  <link rel="canonical" href="https://tlogicworks.pl/">
+  <meta property="og:title" content="T-LogicWorks – Automatyka Przemysłowa | Milanówek">
+  <meta property="og:description" content="Kompleksowe rozwiązania z zakresu automatyki przemysłowej. Programowanie PLC, SCADA/HMI, prefabrykacja szaf elektrycznych, montaż. Milanówek.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tlogicworks.pl/">
+  <meta property="og:image" content="https://tlogicworks.pl/images/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:site_name" content="T-LogicWorks">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="T-LogicWorks – Automatyka Przemysłowa">
+  <meta name="twitter:description" content="Kompleksowe rozwiązania z zakresu automatyki przemysłowej. PLC, SCADA/HMI, prefabrykacja szaf, montaż elektryczny.">
+  <meta name="twitter:image" content="https://tlogicworks.pl/images/og.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "T-LogicWorks Tomasz Tempczyk",
+    "description": "Kompleksowe rozwiązania z zakresu automatyki przemysłowej: programowanie PLC, systemy SCADA/HMI, projektowanie automatyki, prefabrykacja szaf elektrycznych, montaż elektryczny.",
+    "url": "https://tlogicworks.pl",
+    "telephone": "+48503191703",
+    "email": "tomasztempczyk@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ul. Wojska Polskiego 76",
+      "addressLocality": "Milanówek",
+      "postalCode": "05-822",
+      "addressCountry": "PL"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 52.127,
+      "longitude": 20.669
+    },
+    "areaServed": "Polska",
+    "serviceType": ["Programowanie PLC", "Systemy SCADA", "Systemy HMI", "Projektowanie automatyki", "Prefabrykacja szaf elektrycznych", "Montaż elektryczny"]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: #05080e; color: #ddeee8; font-family: 'DM Sans', sans-serif; overflow-x: hidden; }
+    .aos { opacity: 0; transform: translateY(22px); transition: opacity 0.75s ease, transform 0.75s ease; }
+    input:focus, textarea:focus { border-color: rgba(80,255,160,0.5) !important; box-shadow: 0 0 0 3px rgba(80,255,160,0.07) !important; outline: none; }
+    input::placeholder, textarea::placeholder { color: #243830; }
+    @keyframes floatOrb1 {
+      0%, 100% { transform: translate(0,0) scale(1); }
+      50% { transform: translate(55px,-38px) scale(1.1); }
+    }
+    @keyframes floatOrb2 {
+      0%, 100% { transform: translate(0,0) scale(1); }
+      50% { transform: translate(-38px,28px) scale(0.93); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.35; }
+    }
+    @keyframes scrollDot {
+      0%   { transform: translateX(-50%) translateY(0);   opacity: 1; }
+      80%  { transform: translateX(-50%) translateY(10px); opacity: 0; }
+      100% { transform: translateX(-50%) translateY(0);   opacity: 0; }
+    }
+    @media (max-width: 920px) {
+      [data-hero-flex]  { flex-direction: column !important; padding: 120px 36px 64px !important; }
+      [data-hero-text]  { max-width: 100% !important; }
+      [data-hero-img]   { width: 100% !important; max-width: 100% !important; height: 260px !important; flex-shrink: 1 !important; }
+      [data-about-flex] { flex-direction: column !important; }
+      [data-about-img]  { width: 100% !important; max-width: 100% !important; height: 260px !important; flex-shrink: 1 !important; }
+      [data-desk-nav]   { display: none !important; }
+      [data-hamburger]  { display: flex !important; }
+    }
+        @media (max-width: 860px) {
+      [data-bento-grid] { grid-template-columns: 1fr !important; }
+      [data-bento-featured] { grid-column: 1 !important; flex-direction: column !important; gap: 24px !important; }
+    }
+    @media (max-width: 720px) {
+      [data-svc-strip] { grid-template-columns: 54px 1fr !important; }
+      [data-svc-desc]  { display: none !important; }
+    }
+    @media (max-width: 600px) {
+      [data-section-wrap]  { padding: 80px 24px !important; }
+      [data-hero-flex]     { padding: 100px 24px 56px !important; }
+      [data-contact-flex]  { flex-direction: column !important; }
+      [data-footer-flex]   { flex-direction: column !important; gap: 40px !important; }
+      [data-vals-grid]     { grid-template-columns: 1fr !important; }
+      [data-form-row]      { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</helmet>
+
+<!-- Cursor crosshair (desktop only) -->
+<div id="cur-dot" aria-hidden="true" style="position:fixed;width:5px;height:5px;border-radius:50%;background:#50ffa0;pointer-events:none;z-index:9999;top:0;left:0;transform:translate(-50%,-50%);mix-blend-mode:screen;will-change:left,top;"></div>
+<div id="cur-ring" aria-hidden="true" style="position:fixed;width:32px;height:32px;pointer-events:none;z-index:9998;top:0;left:0;transform:translate(-50%,-50%);will-change:left,top;">
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+    <circle cx="16" cy="16" r="12" stroke="rgba(80,255,160,0.45)" stroke-width="1"></circle>
+    <line x1="16" y1="0" x2="16" y2="7" stroke="rgba(80,255,160,0.45)" stroke-width="1"></line>
+    <line x1="16" y1="25" x2="16" y2="32" stroke="rgba(80,255,160,0.45)" stroke-width="1"></line>
+    <line x1="0" y1="16" x2="7" y2="16" stroke="rgba(80,255,160,0.45)" stroke-width="1"></line>
+    <line x1="25" y1="16" x2="32" y2="16" stroke="rgba(80,255,160,0.45)" stroke-width="1"></line>
+  </svg>
+</div>
+
+<!-- ═══════════ NAV ═══════════ -->
+<nav style="position:fixed;inset:0 0 auto 0;z-index:1000;height:84px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(24px,5vw,120px);background:rgba(5,8,14,0);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid transparent;transition:background 0.4s ease,border-color 0.4s ease;">
+
+  <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;text-decoration:none;">
+    <img src="images/logo.png" alt="T-LogicWorks" style="height:34px;width:auto;display:block;" />
+  </a>
+
+  <div data-desk-nav style="display:flex;align-items:center;gap:36px;">
+    <a href="#o-firmie" style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:500;color:#7aaa98;text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;" style-hover="color:#ddeee8;">O Firmie</a>
+    <a href="#uslugi"   style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:500;color:#7aaa98;text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;" style-hover="color:#ddeee8;">Usługi</a>
+    <a href="#kontakt"  style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;color:#05080e;background:linear-gradient(135deg,#50ffa0,#00d9c8);padding:12px 28px;border-radius:4px;text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;white-space:nowrap;transition:opacity 0.2s;" style-hover="opacity:0.88;">Skontaktuj się z nami</a>
+  </div>
+
+  <button data-hamburger onClick="{{ toggleMenu }}" style="display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;">
+    <span style="display:block;width:22px;height:2px;background:#ddeee8;border-radius:1px;"></span>
+    <span style="display:block;width:22px;height:2px;background:#ddeee8;border-radius:1px;"></span>
+    <span style="display:block;width:14px;height:2px;background:#ddeee8;border-radius:1px;"></span>
+  </button>
+</nav>
+
+<!-- Mobile menu -->
+<div style="position:fixed;inset:0;z-index:999;background:rgba(5,8,14,0.98);display:{{ mobileMenuDisplay }};flex-direction:column;align-items:center;justify-content:center;gap:44px;">
+  <a href="#o-firmie" onClick="{{ closeMenu }}" style="font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;color:#ddeee8;text-decoration:none;" style-hover="color:#50ffa0;">O Firmie</a>
+  <a href="#uslugi"   onClick="{{ closeMenu }}" style="font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;color:#ddeee8;text-decoration:none;" style-hover="color:#50ffa0;">Usługi</a>
+  <a href="#kontakt"  onClick="{{ closeMenu }}" style="font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;color:#ddeee8;text-decoration:none;" style-hover="color:#50ffa0;">Kontakt</a>
+  <a href="#kontakt"  onClick="{{ closeMenu }}" style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;color:#05080e;background:linear-gradient(135deg,#50ffa0,#00d9c8);padding:16px 48px;border-radius:4px;text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;">Bezpłatna wycena</a>
+</div>
+
+
+<!-- ═══════════ HERO ═══════════ -->
+<section id="hero" data-screen-label="Hero" style="position:relative;min-height:100vh;overflow:hidden;background:#05080e;display:flex;align-items:center;">
+
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(80,255,160,0.028) 1px,transparent 1px),linear-gradient(90deg,rgba(80,255,160,0.028) 1px,transparent 1px);background-size:52px 52px;pointer-events:none;"></div>
+
+  <div style="position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(80,255,160,0.1) 0%,transparent 65%);top:-200px;left:-160px;animation:floatOrb1 20s ease-in-out infinite;pointer-events:none;"></div>
+  <div style="position:absolute;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(0,217,200,0.08) 0%,transparent 65%);bottom:-240px;right:-200px;animation:floatOrb2 24s ease-in-out infinite;pointer-events:none;"></div>
+
+  <!-- Particle network canvas -->
+  <canvas id="hero-canvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
+
+  <div data-hero-flex style="position:relative;z-index:1;width:100%;max-width:clamp(1280px,88vw,1800px);margin:0 auto;padding:140px 80px 80px;display:flex;align-items:center;gap:100px;">
+
+    <div data-hero-text style="flex:1.4;max-width:clamp(680px,50vw,920px);">
+      <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:30px;padding:6px 14px;border:1px solid rgba(80,255,160,0.2);border-radius:2px;background:rgba(80,255,160,0.05);">
+        <div style="width:6px;height:6px;border-radius:50%;background:#50ffa0;animation:pulse 2s infinite;flex-shrink:0;"></div>
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#50ffa0;">Automatyka Przemysłowa</span>
+      </div>
+
+      <h1 class="hero-el" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(44px,6.5vw,120px);font-weight:700;line-height:1.0;letter-spacing:-0.03em;color:#ddeee8;margin-bottom:28px;">
+        Systemy<br>
+        <span style="background:linear-gradient(120deg,#50ffa0 20%,#00d9c8 80%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Automatyki</span><br>
+        <span style="white-space:nowrap;">dla Przemysłu</span>
+      </h1>
+
+      <p class="hero-el" style="font-size:clamp(15px,1.5vw,22px);color:#6a9a88;line-height:1.85;margin-bottom:44px;">
+        Projektujemy, wdrażamy i modernizujemy układy sterowania maszyn i linii produkcyjnych. Programowanie PLC, systemy SCADA/HMI i pełna realizacja instalacji automatyki.
+      </p>
+
+      <div class="hero-el" style="display:flex;gap:14px;flex-wrap:wrap;">
+        <a href="#uslugi" style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:#05080e;background:linear-gradient(135deg,#50ffa0,#00d9c8);padding:15px 36px;border-radius:4px;text-decoration:none;letter-spacing:0.12em;text-transform:uppercase;white-space:nowrap;transition:opacity 0.2s;" style-hover="opacity:0.88;">Nasze Usługi</a>
+        <a href="#kontakt" style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:#50ffa0;padding:15px 36px;border-radius:4px;text-decoration:none;letter-spacing:0.12em;text-transform:uppercase;border:1px solid rgba(80,255,160,0.3);white-space:nowrap;transition:all 0.2s;" style-hover="background:rgba(80,255,160,0.07);border-color:rgba(80,255,160,0.6);">Skontaktuj się</a>
+      </div>
+    </div>
+
+    <!-- Hero slideshow -->
+    <div data-hero-img style="flex:1;max-width:clamp(520px,36vw,760px);height:clamp(460px,40vh,700px);border-radius:8px;position:relative;border:1px solid rgba(80,255,160,0.12);flex-shrink:0;background:#0a1520;overflow:hidden;">
+      <img id="hslide-0" src="images/header_1.jpg" alt="Automatyka przemysłowa" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity 1.2s ease;" />
+      <img id="hslide-1" src="images/header_2.jpg" alt="Instalacje automatyki" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease;" />
+      <img id="hslide-2" src="images/header_3.jpg" alt="Szafy sterownicze" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease;" />
+      <!-- gradient overlay -->
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(5,8,14,0.55) 100%);pointer-events:none;z-index:1;"></div>
+      <!-- dot indicators -->
+      <div style="position:absolute;bottom:16px;left:50%;transform:translateX(-50%);display:flex;gap:7px;z-index:2;">
+        <div id="hdot-0" style="width:22px;height:3px;border-radius:2px;background:#50ffa0;transition:all 0.4s;"></div>
+        <div id="hdot-1" style="width:8px;height:3px;border-radius:2px;background:rgba(80,255,160,0.25);transition:all 0.4s;"></div>
+        <div id="hdot-2" style="width:8px;height:3px;border-radius:2px;background:rgba(80,255,160,0.25);transition:all 0.4s;"></div>
+      </div>
+      <!-- corner marks -->
+      <div style="position:absolute;top:14px;left:14px;width:20px;height:20px;border-top:2px solid rgba(80,255,160,0.5);border-left:2px solid rgba(80,255,160,0.5);border-radius:1px;pointer-events:none;z-index:2;"></div>
+      <div style="position:absolute;top:14px;right:14px;width:20px;height:20px;border-top:2px solid rgba(80,255,160,0.5);border-right:2px solid rgba(80,255,160,0.5);border-radius:1px;pointer-events:none;z-index:2;"></div>
+      <div style="position:absolute;bottom:14px;left:14px;width:20px;height:20px;border-bottom:2px solid rgba(80,255,160,0.5);border-left:2px solid rgba(80,255,160,0.5);border-radius:1px;pointer-events:none;z-index:2;"></div>
+      <div style="position:absolute;bottom:14px;right:14px;width:20px;height:20px;border-bottom:2px solid rgba(80,255,160,0.5);border-right:2px solid rgba(80,255,160,0.5);border-radius:1px;pointer-events:none;z-index:2;"></div>
+    </div>
+  </div>
+
+  <div style="position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;pointer-events:none;">
+    <span style="font-family:'Space Grotesk',sans-serif;font-size:10px;letter-spacing:0.26em;text-transform:uppercase;color:#2e4a3a;">Przewiń</span>
+    <div style="width:26px;height:42px;border-radius:13px;border:1.5px solid rgba(80,255,160,0.3);position:relative;">
+      <div style="position:absolute;top:7px;left:50%;width:5px;height:5px;border-radius:50%;background:#50ffa0;animation:scrollDot 1.8s ease-in-out infinite;"></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ O FIRMIE ═══════════ -->
+<section id="o-firmie" data-screen-label="O Firmie" data-section-wrap style="padding:120px 80px;background:#07090f;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 0%,rgba(80,255,160,0.18) 50%,transparent 100%);"></div>
+
+  <div data-about-flex style="max-width:clamp(1280px,88vw,1800px);margin:0 auto;display:flex;align-items:center;gap:80px;">
+
+    <!-- About image -->
+    <div data-about-img style="flex-shrink:0;width:440px;height:500px;border-radius:8px;position:relative;border:1px solid rgba(80,255,160,0.1);background:#0a1520;overflow:hidden;">
+      <img src="images/o_firmie.jpg" alt="Realizacja T-LogicWorks" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(5,8,14,0.45) 100%);pointer-events:none;"></div>
+      <div style="position:absolute;top:14px;left:14px;width:20px;height:20px;border-top:2px solid rgba(80,255,160,0.45);border-left:2px solid rgba(80,255,160,0.45);border-radius:1px;"></div>
+      <div style="position:absolute;bottom:14px;right:14px;width:20px;height:20px;border-bottom:2px solid rgba(80,255,160,0.45);border-right:2px solid rgba(80,255,160,0.45);border-radius:1px;"></div>
+    </div>
+
+    <!-- Text -->
+    <div style="flex:1;" class="aos">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:22px;">
+        <div style="width:36px;height:1px;background:linear-gradient(90deg,#50ffa0,#00d9c8);"></div>
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:#50ffa0;">O Firmie</span>
+      </div>
+
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,3.5vw,60px);font-weight:700;line-height:1.1;letter-spacing:-0.02em;color:#ddeee8;margin-bottom:28px;">
+        Kompleksowe rozwiązania<br>
+        <span style="background:linear-gradient(120deg,#50ffa0,#00d9c8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">automatyki</span> przemysłowej
+      </h2>
+
+      <p style="font-size:16px;color:#6a9a88;line-height:1.85;margin-bottom:18px;">
+        Jesteśmy firmą specjalizującą się w automatyce przemysłowej, oferującą kompleksowe rozwiązania wspierające rozwój i optymalizację procesów produkcyjnych. Łączymy wiedzę techniczną, doświadczenie oraz nowoczesne technologie, aby tworzyć niezawodne i wydajne systemy dopasowane do indywidualnych potrzeb naszych klientów.
+      </p>
+
+      <p style="font-size:16px;color:#6a9a88;line-height:1.85;margin-bottom:40px;">
+        W naszej pracy stawiamy na jakość, precyzję i partnerskie podejście. Każdy projekt traktujemy indywidualnie — od analizy potrzeb, przez przygotowanie rozwiązania, aż po wdrożenie i wsparcie techniczne.
+      </p>
+
+      <div data-vals-grid style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div style="padding:20px 22px;border:1px solid rgba(80,255,160,0.1);border-radius:6px;background:rgba(80,255,160,0.03);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#50ffa0;margin-bottom:7px;">Jakość</div>
+          <div style="font-size:13px;color:#5a8878;line-height:1.6;">Niezawodne systemy zgodne z najwyższymi standardami branżowymi</div>
+        </div>
+        <div style="padding:20px 22px;border:1px solid rgba(0,217,200,0.1);border-radius:6px;background:rgba(0,217,200,0.03);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#00d9c8;margin-bottom:7px;">Precyzja</div>
+          <div style="font-size:13px;color:#5a8878;line-height:1.6;">Każdy projekt realizowany z dbałością o każdy detal techniczny</div>
+        </div>
+        <div style="padding:20px 22px;border:1px solid rgba(80,255,160,0.1);border-radius:6px;background:rgba(80,255,160,0.03);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#50ffa0;margin-bottom:7px;">Partnerstwo</div>
+          <div style="font-size:13px;color:#5a8878;line-height:1.6;">Indywidualne podejście i wsparcie techniczne przez cały projekt</div>
+        </div>
+        <div style="padding:20px 22px;border:1px solid rgba(0,217,200,0.1);border-radius:6px;background:rgba(0,217,200,0.03);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#00d9c8;margin-bottom:7px;">Innowacja</div>
+          <div style="font-size:13px;color:#5a8878;line-height:1.6;">Sprawdzone i nowoczesne technologie dla efektywnej automatyzacji</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ USŁUGI ═══════════ -->
+<section id="uslugi" data-screen-label="Usługi" data-section-wrap style="padding:120px 80px;background:#05080e;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(80,255,160,0.022) 1px,transparent 1px),linear-gradient(90deg,rgba(80,255,160,0.022) 1px,transparent 1px);background-size:52px 52px;pointer-events:none;"></div>
+  <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(80,255,160,0.15),transparent);"></div>
+
+  <div style="max-width:clamp(1280px,88vw,1800px);margin:0 auto;position:relative;z-index:1;">
+
+    <div style="text-align:center;margin-bottom:72px;" class="aos">
+      <div style="display:inline-flex;align-items:center;gap:12px;margin-bottom:20px;">
+        <div style="width:36px;height:1px;background:linear-gradient(90deg,#50ffa0,#00d9c8);"></div>
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:#50ffa0;">Usługi</span>
+        <div style="width:36px;height:1px;background:linear-gradient(270deg,#50ffa0,#00d9c8);"></div>
+      </div>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,3.5vw,64px);font-weight:700;line-height:1.1;letter-spacing:-0.02em;color:#ddeee8;margin-bottom:18px;">Co oferujemy</h2>
+      <p style="font-size:clamp(15px,1.5vw,17px);color:#6a9a88;max-width:580px;margin:0 auto;line-height:1.85;">
+        Oferujemy kompleksowe rozwiązania automatyki przemysłowej — od koncepcji i projektu, przez wykonanie, aż po uruchomienie i wsparcie techniczne.
+      </p>
+    </div>
+
+    <!-- Services strips -->
+    <div style="border:1px solid rgba(80,255,160,0.1);border-radius:10px;overflow:hidden;background:rgba(13,26,36,0.65);">
+      <div class="aos" data-svc-strip style="display:grid;grid-template-columns:84px 1fr 1.4fr;align-items:center;gap:0;padding:0;border-bottom:1px solid rgba(80,255,160,0.06);transition:background 0.25s;" style-hover="background:rgba(80,255,160,0.025);">
+        <div style="display:flex;align-items:center;justify-content:center;padding:36px 0 36px 44px;">
+          <div style="width:54px;height:54px;border-radius:10px;background:rgba(80,255,160,0.08);border:1px solid rgba(80,255,160,0.14);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#50ffa0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="1"></rect><path d="M7 9H5M7 12H5M7 15H5M17 9H19M17 12H19M17 15H19M9 7V5M12 7V5M15 7V5M9 17V19M12 17V19M15 17V19"></path></svg>
+          </div>
+        </div>
+        <div style="padding:32px 32px 32px 28px;border-right:1px solid rgba(80,255,160,0.06);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#50ffa0;opacity:0.7;margin-bottom:9px;">Sterowanie</div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:600;color:#ddeee8;letter-spacing:-0.01em;line-height:1.3;">Programowanie sterowników PLC</h3>
+        </div>
+        <div data-svc-desc style="padding:32px 44px 32px 36px;">
+          <p style="font-size:14px;color:#4a7868;line-height:1.85;">Tworzymy oraz wdrażamy dedykowane aplikacje sterowania dla maszyn i linii produkcyjnych. Programujemy sterowniki PLC, optymalizujemy istniejące rozwiązania oraz dostosowujemy systemy do indywidualnych wymagań procesu technologicznego.</p>
+        </div>
+      </div>
+      <div class="aos" data-svc-strip style="display:grid;grid-template-columns:84px 1fr 1.4fr;align-items:center;gap:0;padding:0;border-bottom:1px solid rgba(80,255,160,0.06);transition:background 0.25s;" style-hover="background:rgba(0,217,200,0.02);">
+        <div style="display:flex;align-items:center;justify-content:center;padding:36px 0 36px 44px;">
+          <div style="width:54px;height:54px;border-radius:10px;background:rgba(0,217,200,0.08);border:1px solid rgba(0,217,200,0.14);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8M12 17v4"></path><path d="M6 8l3 2.5L6 13M13 11h4"></path></svg>
+          </div>
+        </div>
+        <div style="padding:32px 32px 32px 28px;border-right:1px solid rgba(80,255,160,0.06);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#00d9c8;opacity:0.7;margin-bottom:9px;">Wizualizacja</div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:600;color:#ddeee8;letter-spacing:-0.01em;line-height:1.3;">Systemy wizualizacji SCADA / HMI</h3>
+        </div>
+        <div data-svc-desc style="padding:32px 44px 32px 36px;">
+          <p style="font-size:14px;color:#4a7868;line-height:1.85;">Projektujemy intuicyjne interfejsy operatorskie oraz systemy nadzoru produkcji. Tworzymy aplikacje HMI i SCADA umożliwiające bieżącą kontrolę, monitoring oraz analizę pracy urządzeń przemysłowych.</p>
+        </div>
+      </div>
+      <div class="aos" data-svc-strip style="display:grid;grid-template-columns:84px 1fr 1.4fr;align-items:center;gap:0;padding:0;border-bottom:1px solid rgba(80,255,160,0.06);transition:background 0.25s;" style-hover="background:rgba(80,255,160,0.025);">
+        <div style="display:flex;align-items:center;justify-content:center;padding:36px 0 36px 44px;">
+          <div style="width:54px;height:54px;border-radius:10px;background:rgba(80,255,160,0.08);border:1px solid rgba(80,255,160,0.14);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#50ffa0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+          </div>
+        </div>
+        <div style="padding:32px 32px 32px 28px;border-right:1px solid rgba(80,255,160,0.06);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#50ffa0;opacity:0.7;margin-bottom:9px;">Dokumentacja</div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:600;color:#ddeee8;letter-spacing:-0.01em;line-height:1.3;">Projektowanie automatyki</h3>
+        </div>
+        <div data-svc-desc style="padding:32px 44px 32px 36px;">
+          <p style="font-size:14px;color:#4a7868;line-height:1.85;">Opracowujemy kompleksową dokumentację oraz rozwiązania techniczne w zakresie automatyki przemysłowej. Projektujemy układy sterowania, dobieramy komponenty oraz przygotowujemy rozwiązania zapewniające bezpieczeństwo i efektywność procesów.</p>
+        </div>
+      </div>
+      <div class="aos" data-svc-strip style="display:grid;grid-template-columns:84px 1fr 1.4fr;align-items:center;gap:0;padding:0;border-bottom:1px solid rgba(80,255,160,0.06);transition:background 0.25s;" style-hover="background:rgba(0,217,200,0.02);">
+        <div style="display:flex;align-items:center;justify-content:center;padding:36px 0 36px 44px;">
+          <div style="width:54px;height:54px;border-radius:10px;background:rgba(0,217,200,0.08);border:1px solid rgba(0,217,200,0.14);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"></rect><path d="M5 9h14M5 15h14"></path><circle cx="12" cy="5.5" r="0.8" fill="#00d9c8" stroke="none"></circle><circle cx="12" cy="12" r="0.8" fill="#00d9c8" stroke="none"></circle></svg>
+          </div>
+        </div>
+        <div style="padding:32px 32px 32px 28px;border-right:1px solid rgba(80,255,160,0.06);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#00d9c8;opacity:0.7;margin-bottom:9px;">Prefabrykacja</div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:600;color:#ddeee8;letter-spacing:-0.01em;line-height:1.3;">Prefabrykacja szaf elektrycznych</h3>
+        </div>
+        <div data-svc-desc style="padding:32px 44px 32px 36px;">
+          <p style="font-size:14px;color:#4a7868;line-height:1.85;">Wykonujemy prefabrykację szaf sterowniczych i elektrycznych zgodnie z wymaganiami projektu oraz obowiązującymi standardami. Zajmujemy się montażem aparatury, okablowaniem, oznaczeniami oraz przygotowaniem kompletnych układów gotowych do instalacji.</p>
+        </div>
+      </div>
+      <div class="aos" data-svc-strip style="display:grid;grid-template-columns:84px 1fr 1.4fr;align-items:center;gap:0;padding:0;transition:background 0.25s;" style-hover="background:rgba(80,255,160,0.025);">
+        <div style="display:flex;align-items:center;justify-content:center;padding:36px 0 36px 44px;">
+          <div style="width:54px;height:54px;border-radius:10px;background:rgba(80,255,160,0.08);border:1px solid rgba(80,255,160,0.14);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#50ffa0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"></path></svg>
+          </div>
+        </div>
+        <div style="padding:32px 32px 32px 28px;border-right:1px solid rgba(80,255,160,0.06);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#50ffa0;opacity:0.7;margin-bottom:9px;">Realizacja</div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:600;color:#ddeee8;letter-spacing:-0.01em;line-height:1.3;">Montaż elektryczny</h3>
+        </div>
+        <div data-svc-desc style="padding:32px 44px 32px 36px;">
+          <p style="font-size:14px;color:#4a7868;line-height:1.85;">Realizujemy profesjonalne prace instalacyjne w zakresie automatyki i elektryki przemysłowej. Wykonujemy montaż urządzeń, tras kablowych, podłączenia elektryczne oraz uruchomienia instalacji na obiektach przemysłowych.</p>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<!-- ═══════════ KONTAKT ═══════════ -->
+<section id="kontakt" data-screen-label="Kontakt" data-section-wrap style="padding:120px 80px;background:#07090f;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(80,255,160,0.18),transparent);"></div>
+
+  <div style="max-width:clamp(1280px,88vw,1800px);margin:0 auto;">
+
+    <div style="text-align:center;margin-bottom:72px;" class="aos">
+      <div style="display:inline-flex;align-items:center;gap:12px;margin-bottom:20px;">
+        <div style="width:36px;height:1px;background:linear-gradient(90deg,#50ffa0,#00d9c8);"></div>
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:#50ffa0;">Kontakt</span>
+        <div style="width:36px;height:1px;background:linear-gradient(270deg,#50ffa0,#00d9c8);"></div>
+      </div>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,3.5vw,64px);font-weight:700;line-height:1.1;letter-spacing:-0.02em;color:#ddeee8;margin-bottom:16px;">Porozmawiajmy o Twoim projekcie</h2>
+      <p style="font-size:clamp(15px,1.5vw,17px);color:#6a9a88;">Napisz do nas — odpowiemy szybko i przygotujemy bezpłatną wycenę</p>
+    </div>
+
+    <div data-contact-flex style="display:flex;gap:56px;align-items:flex-start;">
+
+      <!-- Form -->
+      <div style="flex:1.3;" class="aos">
+        <form onSubmit="{{ handleSubmit }}" style="display:flex;flex-direction:column;gap:18px;">
+          <div data-form-row style="display:grid;grid-template-columns:1fr 1fr;gap:18px;">
+            <div>
+              <label style="display:block;font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#3a6050;margin-bottom:8px;">Imię / Firma</label>
+              <input type="text" name="name" required="" placeholder="Jan Kowalski" style="width:100%;padding:13px 16px;background:#0d1a24;border:1px solid rgba(80,255,160,0.13);border-radius:4px;color:#ddeee8;font-family:'DM Sans',sans-serif;font-size:14px;transition:border-color 0.2s;" />
+            </div>
+            <div>
+              <label style="display:block;font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#3a6050;margin-bottom:8px;">E-mail *</label>
+              <input type="email" name="email" required="" placeholder="jan@firma.pl" style="width:100%;padding:13px 16px;background:#0d1a24;border:1px solid rgba(80,255,160,0.13);border-radius:4px;color:#ddeee8;font-family:'DM Sans',sans-serif;font-size:14px;transition:border-color 0.2s;" />
+            </div>
+          </div>
+          <div>
+            <label style="display:block;font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#3a6050;margin-bottom:8px;">Telefon (opcjonalnie)</label>
+            <input type="tel" name="phone" placeholder="+48 000 000 000" style="width:100%;padding:13px 16px;background:#0d1a24;border:1px solid rgba(80,255,160,0.13);border-radius:4px;color:#ddeee8;font-family:'DM Sans',sans-serif;font-size:14px;transition:border-color 0.2s;" />
+          </div>
+          <div>
+            <label style="display:block;font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#3a6050;margin-bottom:8px;">Wiadomość *</label>
+            <textarea name="message" required="" rows="6" placeholder="Opisz swój projekt lub zapytanie..." style="width:100%;padding:13px 16px;background:#0d1a24;border:1px solid rgba(80,255,160,0.13);border-radius:4px;color:#ddeee8;font-family:'DM Sans',sans-serif;font-size:14px;resize:vertical;line-height:1.65;transition:border-color 0.2s;"></textarea>
+          </div>
+          <button type="submit" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:#05080e;background:linear-gradient(135deg,#50ffa0,#00d9c8);padding:15px 40px;border-radius:4px;border:none;cursor:pointer;letter-spacing:0.15em;text-transform:uppercase;transition:opacity 0.2s;width:100%;" style-hover="opacity:0.88;">Wyślij wiadomość</button>
+          <!-- Honeypot: ukryte pole — wypełniane tylko przez boty -->
+          <div style="position:absolute;left:-9999px;top:-9999px;opacity:0;pointer-events:none;" aria-hidden="true">
+            <label for="_hp_website">Nie wypełniaj tego pola</label>
+            <input type="text" id="_hp_website" name="_hp_website" tabindex="-1" autocomplete="off" />
+          </div>
+          <p style="font-size:11px;color:#243830;text-align:center;line-height:1.6;">Formularz zostanie podpięty do wybranego narzędzia (Formspree / EmailJS) po akceptacji designu</p>
+        </form>
+      </div>
+
+      <!-- Info -->
+      <div style="flex:0.9;display:flex;flex-direction:column;gap:18px;" class="aos">
+
+        <div style="padding:28px;border:1px solid rgba(80,255,160,0.1);border-radius:8px;background:rgba(13,26,36,0.7);">
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;color:#ddeee8;margin-bottom:24px;">Dane kontaktowe</h3>
+          <div style="display:flex;flex-direction:column;gap:18px;">
+
+            <div style="display:flex;gap:14px;align-items:flex-start;">
+              <div style="width:34px;height:34px;border-radius:6px;background:rgba(80,255,160,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#50ffa0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div>
+                <div style="font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#2a5040;margin-bottom:5px;">Adres biura</div>
+                <div style="font-size:14px;color:#aaccc0;line-height:1.65;">ul. Wojska Polskiego 76<br>05-822 Milanówek, Polska</div>
+              </div>
+            </div>
+
+            <div style="display:flex;gap:14px;align-items:flex-start;">
+              <div style="width:34px;height:34px;border-radius:6px;background:rgba(80,255,160,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#50ffa0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path></svg>
+              </div>
+              <div>
+                <div style="font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#2a5040;margin-bottom:5px;">Telefon</div>
+                <a href="tel:+48503191703" style="font-size:14px;color:#aaccc0;text-decoration:none;transition:color 0.2s;" style-hover="color:#50ffa0;">+48 503 191 703</a>
+              </div>
+            </div>
+
+            <div style="display:flex;gap:14px;align-items:flex-start;">
+              <div style="width:34px;height:34px;border-radius:6px;background:rgba(80,255,160,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#50ffa0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <div>
+                <div style="font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#2a5040;margin-bottom:5px;">E-mail</div>
+                <a href="mailto:tomasztempczyk@gmail.com" style="font-size:14px;color:#aaccc0;text-decoration:none;word-break:break-all;transition:color 0.2s;" style-hover="color:#50ffa0;">tomasztempczyk@gmail.com</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div style="padding:22px 28px;border:1px solid rgba(80,255,160,0.07);border-radius:8px;background:rgba(13,26,36,0.5);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;color:#ddeee8;margin-bottom:10px;">T-LogicWorks TOMASZ TEMPCZYK</div>
+          <div style="font-size:13px;color:#2a4a38;line-height:1.9;">NIP: [do uzupełnienia]<br>REGON: [do uzupełnienia]</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer data-screen-label="Stopka" style="background:#030508;border-top:1px solid rgba(80,255,160,0.05);padding:64px 80px 40px;">
+  <div style="max-width:clamp(1280px,88vw,1800px);margin:0 auto;">
+
+    <div data-footer-flex style="display:flex;gap:72px;margin-bottom:56px;">
+
+      <div style="flex:1.8;min-width:0;">
+        <a href="#" style="display:inline-flex;align-items:center;text-decoration:none;margin-bottom:18px;">
+          <img src="images/logo.png" alt="T-LogicWorks" style="height:28px;width:auto;display:block;" />
+        </a>
+        <p style="font-size:13px;color:#2e5040;line-height:1.85;max-width:260px;">Kompleksowe rozwiązania z zakresu automatyki przemysłowej. PLC, SCADA/HMI, projektowanie i montaż.</p>
+      </div>
+
+      <div style="flex:1;min-width:0;">
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#1e3028;margin-bottom:18px;">Nawigacja</div>
+        <div style="display:flex;flex-direction:column;gap:11px;">
+          <a href="#o-firmie" style="font-size:13px;color:#3a6050;text-decoration:none;transition:color 0.2s;" style-hover="color:#50ffa0;">O firmie</a>
+          <a href="#uslugi"   style="font-size:13px;color:#3a6050;text-decoration:none;transition:color 0.2s;" style-hover="color:#50ffa0;">Usługi</a>
+          <a href="#kontakt"  style="font-size:13px;color:#3a6050;text-decoration:none;transition:color 0.2s;" style-hover="color:#50ffa0;">Kontakt</a>
+        </div>
+      </div>
+
+      <div style="flex:1.4;min-width:0;">
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#1e3028;margin-bottom:18px;">Kontakt</div>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="tel:+48503191703" style="font-size:13px;color:#3a6050;text-decoration:none;transition:color 0.2s;" style-hover="color:#50ffa0;">+48 503 191 703</a>
+          <a href="mailto:tomasztempczyk@gmail.com" style="font-size:13px;color:#3a6050;text-decoration:none;word-break:break-all;transition:color 0.2s;" style-hover="color:#50ffa0;">tomasztempczyk@gmail.com</a>
+          <div style="font-size:13px;color:#3a6050;line-height:1.65;">ul. Wojska Polskiego 76<br>05-822 Milanówek</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="padding-top:28px;border-top:1px solid rgba(80,255,160,0.05);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+      <div style="font-size:12px;color:#162420;">© {{ currentYear }} T-LogicWorks Tomasz Tempczyk. Wszelkie prawa zastrzeżone.</div>
+      <div style="font-size:12px;color:#162420;">
+        Strona stworzona przez: <a href="https://drawninstars.art/" target="_blank" rel="noopener noreferrer" aria-label="Strona drawninstars.art – twórca strony" style="color:#243c30;text-decoration:none;border-bottom:1px solid rgba(80,255,160,0.15);padding-bottom:1px;transition:color 0.2s,border-color 0.2s;" style-hover="color:#50ffa0;border-bottom-color:rgba(80,255,160,0.4);">drawninstars.art</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+
+class Component extends DCLogic {
+  state = {
+    menuOpen: false,
+  };
+
+  componentDidMount() {
+    const nav = document.querySelector('nav');
+    this._onScroll = () => {
+      const s = window.scrollY > 60;
+      nav.style.background = s ? 'rgba(5,8,14,0.96)' : 'rgba(5,8,14,0)';
+      nav.style.borderBottomColor = s ? 'rgba(80,255,160,0.08)' : 'transparent';
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+
+    this._observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            this._observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.07, rootMargin: '0px 0px -28px 0px' }
+    );
+
+    // ── Hero slideshow ────────────────────────────────────────
+    const slides = [0,1,2].map(i => document.getElementById('hslide-'+i));
+    const dots   = [0,1,2].map(i => document.getElementById('hdot-'+i));
+    let hIdx = 0;
+    const goSlide = (next) => {
+      slides[hIdx].style.opacity = '0';
+      dots[hIdx].style.width = '8px';
+      dots[hIdx].style.background = 'rgba(80,255,160,0.25)';
+      hIdx = next;
+      slides[hIdx].style.opacity = '1';
+      dots[hIdx].style.width = '22px';
+      dots[hIdx].style.background = '#50ffa0';
+    };
+    this._slideTimer = setInterval(() => {
+      goSlide((hIdx + 1) % 3);
+    }, 4500);
+
+    // ── Cursor crosshair ──────────────────────────────────────
+    const dot  = document.getElementById('cur-dot');
+    const ring = document.getElementById('cur-ring');
+    if (dot && ring) {
+      let mx = -200, my = -200, rx = -200, ry = -200;
+      this._onMouseMove = (e) => {
+        mx = e.clientX; my = e.clientY;
+        dot.style.left = mx + 'px';
+        dot.style.top  = my + 'px';
+      };
+      window.addEventListener('mousemove', this._onMouseMove);
+      const tickRing = () => {
+        rx += (mx - rx) * 0.13;
+        ry += (my - ry) * 0.13;
+        ring.style.left = rx + 'px';
+        ring.style.top  = ry + 'px';
+        this._ringRaf = requestAnimationFrame(tickRing);
+      };
+      tickRing();
+    }
+
+    // ── Hero particle network canvas ──────────────────────────
+    const canvas = document.getElementById('hero-canvas');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const resize = () => {
+        const W = canvas.offsetWidth, H = canvas.offsetHeight;
+        canvas.width  = W * dpr;
+        canvas.height = H * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      };
+      resize();
+      this._canvasResize = resize;
+      window.addEventListener('resize', resize);
+
+      const COUNT = 60;
+      const pts = Array.from({ length: COUNT }, () => ({
+        x:  Math.random() * canvas.offsetWidth,
+        y:  Math.random() * canvas.offsetHeight,
+        vx: (Math.random() - 0.5) * 0.45,
+        vy: (Math.random() - 0.5) * 0.45,
+        r:  Math.random() * 1.2 + 0.4,
+      }));
+
+      const LINK = 155;
+      const drawCanvas = () => {
+        const W = canvas.offsetWidth, H = canvas.offsetHeight;
+        ctx.clearRect(0, 0, W, H);
+        pts.forEach(p => {
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0) { p.x = 0; p.vx *= -1; }
+          if (p.x > W) { p.x = W; p.vx *= -1; }
+          if (p.y < 0) { p.y = 0; p.vy *= -1; }
+          if (p.y > H) { p.y = H; p.vy *= -1; }
+        });
+        for (let i = 0; i < pts.length; i++) {
+          for (let j = i + 1; j < pts.length; j++) {
+            const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
+            const d = Math.sqrt(dx * dx + dy * dy);
+            if (d < LINK) {
+              const a = (1 - d / LINK) * 0.22;
+              ctx.strokeStyle = `rgba(80,255,160,${a})`;
+              ctx.lineWidth = 0.7;
+              ctx.beginPath();
+              ctx.moveTo(pts[i].x, pts[i].y);
+              ctx.lineTo(pts[j].x, pts[j].y);
+              ctx.stroke();
+            }
+          }
+        }
+        pts.forEach(p => {
+          ctx.fillStyle = 'rgba(80,255,160,0.38)';
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fill();
+        });
+        this._canvasRaf = requestAnimationFrame(drawCanvas);
+      };
+      drawCanvas();
+    }
+
+    // Set document language for SEO
+    document.documentElement.lang = 'pl';
+
+    let delay = 0;
+    document.querySelectorAll('.aos').forEach((el) => {
+      el.style.transitionDelay = delay + 's';
+      delay = parseFloat((Math.min(delay + 0.1, 0.5)).toFixed(1));
+      this._observer.observe(el);
+    });
+
+    // Hero reveal: cancel DC runtime animations and show immediately
+    this._revealHero = () => {
+      document.querySelectorAll('.hero-el').forEach((el) => {
+        el.getAnimations().forEach((a) => a.cancel());
+        el.style.setProperty('opacity', '1', 'important');
+        el.style.setProperty('transform', 'none', 'important');
+      });
+    };
+    const delays = [120, 300, 480];
+    document.querySelectorAll('.hero-el').forEach((el, i) => {
+      el.style.setProperty('opacity', '0', 'important');
+      el.style.setProperty('transform', 'translateY(22px)', 'important');
+      setTimeout(() => {
+        el.getAnimations().forEach((a) => a.cancel());
+        el.style.setProperty('transition', 'opacity 0.75s ease, transform 0.75s ease', 'important');
+        el.style.setProperty('opacity', '1', 'important');
+        el.style.setProperty('transform', 'none', 'important');
+      }, delays[i]);
+    });
+  }
+
+  componentDidUpdate() {
+    if (this._revealHero) this._revealHero();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    if (this._canvasResize) window.removeEventListener('resize', this._canvasResize);
+    if (this._onMouseMove) window.removeEventListener('mousemove', this._onMouseMove);
+    if (this._slideTimer) clearInterval(this._slideTimer);
+    if (this._ringRaf)   cancelAnimationFrame(this._ringRaf);
+    if (this._canvasRaf) cancelAnimationFrame(this._canvasRaf);
+    if (this._observer)  this._observer.disconnect();
+  }
+
+  renderVals() {
+    const { menuOpen } = this.state;
+    return {
+      mobileMenuDisplay: menuOpen ? 'flex' : 'none',
+      toggleMenu: () => this.setState((s) => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      currentYear: new Date().getFullYear(),
+      handleSubmit: (e) => {
+        e.preventDefault();
+        // Honeypot check — bots fill hidden field, humans don't
+        const hp = e.target.querySelector('[name="_hp_website"]');
+        if (hp && hp.value) return; // silent drop
+        alert('Dziękujemy za wiadomość!\nOdezwiemy się tak szybko, jak to możliwe.');
+        e.target.reset();
+      },
+    };
+  }
+}
+
+</script>
+</body>
+</html>
