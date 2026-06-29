@@ -719,12 +719,13 @@ class Component extends DCLogic {
 
 </script>
 <script>
-function toggleMobileMenu() {
-  document.body.classList.toggle('menu-open');
-}
-function closeMobileMenu() {
-  document.body.classList.remove('menu-open');
-}
+document.addEventListener('click', function(e) {
+  if (e.target.closest('[data-hamburger]')) {
+    document.body.classList.toggle('menu-open');
+  } else if (e.target.closest('#mobile-menu')) {
+    document.body.classList.remove('menu-open');
+  }
+});
 </script>
 </body>
 </html>
