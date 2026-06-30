@@ -129,7 +129,8 @@
     @media (max-width: 600px) {
       [data-section-wrap]  { padding: 80px 24px !important; }
       [data-hero-flex]     { padding: 100px 24px 56px !important; }
-      [data-contact-flex]  { flex-direction: column !important; }
+      [data-contact-flex]  { flex-direction: column !important; align-items: stretch !important; }
+      [data-form-label]    { color: #8fb8a6 !important; }
       [data-footer-flex]   { flex-direction: column !important; gap: 40px !important; }
       [data-vals-grid]     { grid-template-columns: 1fr !important; }
       [data-form-row]      { grid-template-columns: 1fr !important; }
@@ -441,20 +442,20 @@
         <form id="contact-form" action="https://formsubmit.co/tomasztempczyk@gmail.com" method="POST" style="display:flex;flex-direction:column;gap:18px;">
           <div data-form-row style="display:grid;grid-template-columns:1fr 1fr;gap:18px;">
             <div>
-              <label style="display:block;font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#3a6050;margin-bottom:8px;">Imię / Firma</label>
+              <label data-form-label style="display:block;font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#3a6050;margin-bottom:8px;">Imię / Firma</label>
               <input type="text" name="name" required="" placeholder="Jan Kowalski" style="width:100%;padding:13px 16px;background:#0d1a24;border:1px solid rgba(80,255,160,0.13);border-radius:4px;color:#ddeee8;font-family:'DM Sans',sans-serif;font-size:14px;transition:border-color 0.2s;" />
             </div>
             <div>
-              <label style="display:block;font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#3a6050;margin-bottom:8px;">E-mail *</label>
+              <label data-form-label style="display:block;font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#3a6050;margin-bottom:8px;">E-mail *</label>
               <input type="email" name="email" required="" placeholder="jan@firma.pl" style="width:100%;padding:13px 16px;background:#0d1a24;border:1px solid rgba(80,255,160,0.13);border-radius:4px;color:#ddeee8;font-family:'DM Sans',sans-serif;font-size:14px;transition:border-color 0.2s;" />
             </div>
           </div>
           <div>
-            <label style="display:block;font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#3a6050;margin-bottom:8px;">Telefon (opcjonalnie)</label>
+            <label data-form-label style="display:block;font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#3a6050;margin-bottom:8px;">Telefon (opcjonalnie)</label>
             <input type="tel" name="phone" placeholder="+48 000 000 000" style="width:100%;padding:13px 16px;background:#0d1a24;border:1px solid rgba(80,255,160,0.13);border-radius:4px;color:#ddeee8;font-family:'DM Sans',sans-serif;font-size:14px;transition:border-color 0.2s;" />
           </div>
           <div>
-            <label style="display:block;font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#3a6050;margin-bottom:8px;">Wiadomość *</label>
+            <label data-form-label style="display:block;font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#3a6050;margin-bottom:8px;">Wiadomość *</label>
             <textarea name="message" required="" rows="6" placeholder="Opisz swój projekt lub zapytanie..." style="width:100%;padding:13px 16px;background:#0d1a24;border:1px solid rgba(80,255,160,0.13);border-radius:4px;color:#ddeee8;font-family:'DM Sans',sans-serif;font-size:14px;resize:vertical;line-height:1.65;transition:border-color 0.2s;"></textarea>
           </div>
           <button type="submit" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:#05080e;background:linear-gradient(135deg,#50ffa0,#00d9c8);padding:15px 40px;border-radius:4px;border:none;cursor:pointer;letter-spacing:0.15em;text-transform:uppercase;transition:opacity 0.2s;width:100%;" style-hover="opacity:0.88;">Wyślij wiadomość</button>
