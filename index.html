@@ -7,6 +7,8 @@
 <script defer src="/_vercel/insights/script.js"></script>
 <style>
   body.menu-open #mobile-menu { display: flex !important; }
+  #contact-form input.field-invalid,
+  #contact-form textarea.field-invalid { border-color: #ff8080 !important; }
   @media (max-width: 920px) {
     [data-hamburger] { display: flex !important; }
     [data-desk-nav]  { display: none !important; }
@@ -446,24 +448,28 @@
 
       <!-- Form -->
       <div style="flex:1.3;" class="aos">
-        <form id="contact-form" action="https://formsubmit.co/tomasztempczyk@gmail.com" method="POST" style="display:flex;flex-direction:column;gap:18px;">
+        <form id="contact-form" action="https://formsubmit.co/tomasztempczyk@gmail.com" method="POST" novalidate style="display:flex;flex-direction:column;gap:18px;">
           <div data-form-row style="display:grid;grid-template-columns:1fr 1fr;gap:18px;">
             <div>
               <label data-form-label style="display:block;font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#3a6050;margin-bottom:8px;">Imię / Firma</label>
-              <input type="text" name="name" required="" placeholder="Jan Kowalski" style="width:100%;padding:13px 16px;background:#0d1a24;border:1px solid rgba(80,255,160,0.13);border-radius:4px;color:#ddeee8;font-family:'DM Sans',sans-serif;font-size:14px;transition:border-color 0.2s;" />
+              <input type="text" name="name" id="field-name" required minlength="2" placeholder="Jan Kowalski" style="width:100%;padding:13px 16px;background:#0d1a24;border:1px solid rgba(80,255,160,0.13);border-radius:4px;color:#ddeee8;font-family:'DM Sans',sans-serif;font-size:14px;transition:border-color 0.2s;" />
+              <span data-field-error style="display:none;color:#ff8080;font-size:12px;margin-top:6px;"></span>
             </div>
             <div>
               <label data-form-label style="display:block;font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#3a6050;margin-bottom:8px;">E-mail *</label>
-              <input type="email" name="email" required="" placeholder="jan@firma.pl" style="width:100%;padding:13px 16px;background:#0d1a24;border:1px solid rgba(80,255,160,0.13);border-radius:4px;color:#ddeee8;font-family:'DM Sans',sans-serif;font-size:14px;transition:border-color 0.2s;" />
+              <input type="email" name="email" id="field-email" required placeholder="jan@firma.pl" style="width:100%;padding:13px 16px;background:#0d1a24;border:1px solid rgba(80,255,160,0.13);border-radius:4px;color:#ddeee8;font-family:'DM Sans',sans-serif;font-size:14px;transition:border-color 0.2s;" />
+              <span data-field-error style="display:none;color:#ff8080;font-size:12px;margin-top:6px;"></span>
             </div>
           </div>
           <div>
             <label data-form-label style="display:block;font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#3a6050;margin-bottom:8px;">Telefon (opcjonalnie)</label>
-            <input type="tel" name="phone" placeholder="+48 000 000 000" style="width:100%;padding:13px 16px;background:#0d1a24;border:1px solid rgba(80,255,160,0.13);border-radius:4px;color:#ddeee8;font-family:'DM Sans',sans-serif;font-size:14px;transition:border-color 0.2s;" />
+            <input type="tel" name="phone" id="field-phone" placeholder="+48 000 000 000" style="width:100%;padding:13px 16px;background:#0d1a24;border:1px solid rgba(80,255,160,0.13);border-radius:4px;color:#ddeee8;font-family:'DM Sans',sans-serif;font-size:14px;transition:border-color 0.2s;" />
+            <span data-field-error style="display:none;color:#ff8080;font-size:12px;margin-top:6px;"></span>
           </div>
           <div>
             <label data-form-label style="display:block;font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#3a6050;margin-bottom:8px;">Wiadomość *</label>
-            <textarea name="message" required="" rows="6" placeholder="Opisz swój projekt lub zapytanie..." style="width:100%;padding:13px 16px;background:#0d1a24;border:1px solid rgba(80,255,160,0.13);border-radius:4px;color:#ddeee8;font-family:'DM Sans',sans-serif;font-size:14px;resize:vertical;line-height:1.65;transition:border-color 0.2s;"></textarea>
+            <textarea name="message" id="field-message" required minlength="10" rows="6" placeholder="Opisz swój projekt lub zapytanie..." style="width:100%;padding:13px 16px;background:#0d1a24;border:1px solid rgba(80,255,160,0.13);border-radius:4px;color:#ddeee8;font-family:'DM Sans',sans-serif;font-size:14px;resize:vertical;line-height:1.65;transition:border-color 0.2s;"></textarea>
+            <span data-field-error style="display:none;color:#ff8080;font-size:12px;margin-top:6px;"></span>
           </div>
           <button type="submit" style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:#05080e;background:linear-gradient(135deg,#50ffa0,#00d9c8);padding:15px 40px;border-radius:4px;border:none;cursor:pointer;letter-spacing:0.15em;text-transform:uppercase;transition:opacity 0.2s;width:100%;" style-hover="opacity:0.88;">Wyślij wiadomość</button>
           <!-- FormSubmit fields -->
@@ -779,6 +785,73 @@ document.addEventListener('click', function(e) {
   }
 });
 
+function showFieldError(input, message) {
+  input.classList.add('field-invalid');
+  var err = input.parentElement.querySelector('[data-field-error]');
+  if (err) { err.textContent = message; err.style.display = 'block'; }
+}
+function clearFieldError(input) {
+  input.classList.remove('field-invalid');
+  var err = input.parentElement.querySelector('[data-field-error]');
+  if (err) { err.style.display = 'none'; err.textContent = ''; }
+}
+function validateContactForm(form) {
+  var valid = true;
+  var firstInvalid = null;
+
+  var name = form.querySelector('#field-name');
+  if (!name.value.trim()) {
+    showFieldError(name, 'Podaj imię lub nazwę firmy.');
+    valid = false; firstInvalid = firstInvalid || name;
+  } else if (name.value.trim().length < 2) {
+    showFieldError(name, 'Imię/nazwa jest za krótkie.');
+    valid = false; firstInvalid = firstInvalid || name;
+  } else {
+    clearFieldError(name);
+  }
+
+  var email = form.querySelector('#field-email');
+  var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!email.value.trim()) {
+    showFieldError(email, 'Podaj adres e-mail.');
+    valid = false; firstInvalid = firstInvalid || email;
+  } else if (!emailPattern.test(email.value.trim())) {
+    showFieldError(email, 'Podaj poprawny adres e-mail.');
+    valid = false; firstInvalid = firstInvalid || email;
+  } else {
+    clearFieldError(email);
+  }
+
+  var phone = form.querySelector('#field-phone');
+  var phonePattern = /^[0-9+\s\-()]{9,20}$/;
+  if (phone.value.trim() && !phonePattern.test(phone.value.trim())) {
+    showFieldError(phone, 'Podaj poprawny numer telefonu.');
+    valid = false; firstInvalid = firstInvalid || phone;
+  } else {
+    clearFieldError(phone);
+  }
+
+  var message = form.querySelector('#field-message');
+  if (!message.value.trim()) {
+    showFieldError(message, 'Napisz wiadomość.');
+    valid = false; firstInvalid = firstInvalid || message;
+  } else if (message.value.trim().length < 10) {
+    showFieldError(message, 'Wiadomość jest za krótka (min. 10 znaków).');
+    valid = false; firstInvalid = firstInvalid || message;
+  } else {
+    clearFieldError(message);
+  }
+
+  if (firstInvalid) firstInvalid.focus();
+  return valid;
+}
+
+document.addEventListener('input', function(e) {
+  if (e.target.closest('#contact-form') && e.target.classList.contains('field-invalid')) {
+    clearFieldError(e.target);
+  }
+});
+
 document.addEventListener('submit', function(e) {
   var form = e.target.closest('#contact-form');
   if (!form) return;
@@ -786,6 +859,8 @@ document.addEventListener('submit', function(e) {
 
   var honey = form.querySelector('[name="_honey"]');
   if (honey && honey.value) return; // bot, silent drop
+
+  if (!validateContactForm(form)) return;
 
   var statusEl = document.getElementById('form-status');
   var btn = form.querySelector('button[type="submit"]');
