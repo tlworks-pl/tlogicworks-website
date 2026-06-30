@@ -108,8 +108,11 @@
       [data-bento-featured] { grid-column: 1 !important; flex-direction: column !important; gap: 24px !important; }
     }
     @media (max-width: 720px) {
-      [data-svc-strip] { grid-template-columns: 54px 1fr !important; }
-      [data-svc-desc]  { display: none !important; }
+      [data-svc-strip] { grid-template-columns: 28px 54px 1fr !important; cursor: pointer; }
+      [data-svc-arrow] { display: flex !important; }
+      [data-svc-desc]  { display: none !important; grid-column: 1 / -1 !important; padding: 0 28px 28px 28px !important; }
+      [data-svc-strip].svc-open [data-svc-desc] { display: block !important; }
+      [data-svc-strip].svc-open [data-svc-arrow] svg { transform: rotate(90deg); }
     }
     @media (max-width: 600px) {
       [data-section-wrap]  { padding: 80px 24px !important; }
@@ -308,6 +311,9 @@
     <!-- Services strips -->
     <div style="border:1px solid rgba(80,255,160,0.1);border-radius:10px;overflow:hidden;background:rgba(13,26,36,0.65);">
       <div class="aos" data-svc-strip style="display:grid;grid-template-columns:84px 1fr 1.4fr;align-items:center;gap:0;padding:0;border-bottom:1px solid rgba(80,255,160,0.06);transition:background 0.25s;" style-hover="background:rgba(80,255,160,0.025);">
+        <div data-svc-arrow style="display:none;align-items:center;justify-content:center;transition:transform 0.25s ease;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#50ffa0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </div>
         <div style="display:flex;align-items:center;justify-content:center;padding:36px 0 36px 44px;">
           <div style="width:54px;height:54px;border-radius:10px;background:rgba(80,255,160,0.08);border:1px solid rgba(80,255,160,0.14);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#50ffa0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="1"></rect><path d="M7 9H5M7 12H5M7 15H5M17 9H19M17 12H19M17 15H19M9 7V5M12 7V5M15 7V5M9 17V19M12 17V19M15 17V19"></path></svg>
@@ -322,6 +328,9 @@
         </div>
       </div>
       <div class="aos" data-svc-strip style="display:grid;grid-template-columns:84px 1fr 1.4fr;align-items:center;gap:0;padding:0;border-bottom:1px solid rgba(80,255,160,0.06);transition:background 0.25s;" style-hover="background:rgba(0,217,200,0.02);">
+        <div data-svc-arrow style="display:none;align-items:center;justify-content:center;transition:transform 0.25s ease;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#50ffa0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </div>
         <div style="display:flex;align-items:center;justify-content:center;padding:36px 0 36px 44px;">
           <div style="width:54px;height:54px;border-radius:10px;background:rgba(0,217,200,0.08);border:1px solid rgba(0,217,200,0.14);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8M12 17v4"></path><path d="M6 8l3 2.5L6 13M13 11h4"></path></svg>
@@ -336,6 +345,9 @@
         </div>
       </div>
       <div class="aos" data-svc-strip style="display:grid;grid-template-columns:84px 1fr 1.4fr;align-items:center;gap:0;padding:0;border-bottom:1px solid rgba(80,255,160,0.06);transition:background 0.25s;" style-hover="background:rgba(80,255,160,0.025);">
+        <div data-svc-arrow style="display:none;align-items:center;justify-content:center;transition:transform 0.25s ease;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#50ffa0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </div>
         <div style="display:flex;align-items:center;justify-content:center;padding:36px 0 36px 44px;">
           <div style="width:54px;height:54px;border-radius:10px;background:rgba(80,255,160,0.08);border:1px solid rgba(80,255,160,0.14);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#50ffa0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
@@ -350,6 +362,9 @@
         </div>
       </div>
       <div class="aos" data-svc-strip style="display:grid;grid-template-columns:84px 1fr 1.4fr;align-items:center;gap:0;padding:0;border-bottom:1px solid rgba(80,255,160,0.06);transition:background 0.25s;" style-hover="background:rgba(0,217,200,0.02);">
+        <div data-svc-arrow style="display:none;align-items:center;justify-content:center;transition:transform 0.25s ease;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#50ffa0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </div>
         <div style="display:flex;align-items:center;justify-content:center;padding:36px 0 36px 44px;">
           <div style="width:54px;height:54px;border-radius:10px;background:rgba(0,217,200,0.08);border:1px solid rgba(0,217,200,0.14);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"></rect><path d="M5 9h14M5 15h14"></path><circle cx="12" cy="5.5" r="0.8" fill="#00d9c8" stroke="none"></circle><circle cx="12" cy="12" r="0.8" fill="#00d9c8" stroke="none"></circle></svg>
@@ -364,6 +379,9 @@
         </div>
       </div>
       <div class="aos" data-svc-strip style="display:grid;grid-template-columns:84px 1fr 1.4fr;align-items:center;gap:0;padding:0;transition:background 0.25s;" style-hover="background:rgba(80,255,160,0.025);">
+        <div data-svc-arrow style="display:none;align-items:center;justify-content:center;transition:transform 0.25s ease;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#50ffa0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </div>
         <div style="display:flex;align-items:center;justify-content:center;padding:36px 0 36px 44px;">
           <div style="width:54px;height:54px;border-radius:10px;background:rgba(80,255,160,0.08);border:1px solid rgba(80,255,160,0.14);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#50ffa0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"></path></svg>
@@ -724,6 +742,9 @@ document.addEventListener('click', function(e) {
     document.body.classList.toggle('menu-open');
   } else if (e.target.closest('#mobile-menu')) {
     document.body.classList.remove('menu-open');
+  } else {
+    var strip = e.target.closest('[data-svc-strip]');
+    if (strip) strip.classList.toggle('svc-open');
   }
 });
 </script>
