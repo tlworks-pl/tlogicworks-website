@@ -110,7 +110,7 @@
     }
     @media (max-width: 720px) {
       [data-svc-strip] { grid-template-columns: 60px 1fr 44px !important; cursor: pointer; }
-      [data-svc-strip] > div:nth-child(2) { padding: 20px 0 20px 16px !important; }
+      [data-svc-strip] > div:nth-child(2) { padding: 20px 15px 20px 16px !important; }
       [data-svc-strip] > div:nth-child(3) { padding: 20px 10px 20px 10px !important; border-right: none !important; }
       [data-svc-arrow] {
         display: flex !important; grid-column: 3 !important; grid-row: 1 !important;
@@ -132,6 +132,13 @@
       [data-footer-flex]   { flex-direction: column !important; gap: 40px !important; }
       [data-vals-grid]     { grid-template-columns: 1fr !important; }
       [data-form-row]      { grid-template-columns: 1fr !important; }
+      [data-scroll-label]  { color: #7aaa98 !important; }
+      footer                { padding-left: 20px !important; padding-right: 20px !important; }
+      [data-footer-logo]   { height: 17px !important; }
+      [data-footer-text]   { color: #8fb8a6 !important; }
+      [data-footer-heading]{ color: #50ffa0 !important; }
+      [data-footer-copy]   { color: #7fae9c !important; }
+      [data-footer-credit-link] { color: #8fb8a6 !important; }
     }
   </style>
 </helmet>
@@ -235,7 +242,7 @@
   </div>
 
   <div style="position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;pointer-events:none;">
-    <span style="font-family:'Space Grotesk',sans-serif;font-size:10px;letter-spacing:0.26em;text-transform:uppercase;color:#2e4a3a;">Przewiń</span>
+    <span data-scroll-label style="font-family:'Space Grotesk',sans-serif;font-size:10px;letter-spacing:0.26em;text-transform:uppercase;color:#2e4a3a;">Przewiń</span>
     <div style="width:26px;height:42px;border-radius:13px;border:1.5px solid rgba(80,255,160,0.3);position:relative;">
       <div style="position:absolute;top:7px;left:50%;width:5px;height:5px;border-radius:50%;background:#50ffa0;animation:scrollDot 1.8s ease-in-out infinite;"></div>
     </div>
@@ -518,35 +525,35 @@
 
       <div style="flex:1.8;min-width:0;">
         <a href="#" style="display:inline-flex;align-items:center;text-decoration:none;margin-bottom:18px;">
-          <img src="images/logo.png" alt="T-LogicWorks" style="height:28px;width:auto;display:block;" />
+          <img data-footer-logo src="images/logo.png" alt="T-LogicWorks" style="height:28px;width:auto;display:block;" />
         </a>
-        <p style="font-size:13px;color:#2e5040;line-height:1.85;max-width:260px;">Kompleksowe rozwiązania z zakresu automatyki przemysłowej. PLC, SCADA/HMI, projektowanie i montaż.</p>
+        <p data-footer-text style="font-size:13px;color:#2e5040;line-height:1.85;max-width:260px;">Kompleksowe rozwiązania z zakresu automatyki przemysłowej. PLC, SCADA/HMI, projektowanie i montaż.</p>
       </div>
 
       <div style="flex:1;min-width:0;">
-        <div style="font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#1e3028;margin-bottom:18px;">Nawigacja</div>
+        <div data-footer-heading style="font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#1e3028;margin-bottom:18px;">Nawigacja</div>
         <div style="display:flex;flex-direction:column;gap:11px;">
-          <a href="#o-firmie" style="font-size:13px;color:#3a6050;text-decoration:none;transition:color 0.2s;" style-hover="color:#50ffa0;">O firmie</a>
-          <a href="#uslugi"   style="font-size:13px;color:#3a6050;text-decoration:none;transition:color 0.2s;" style-hover="color:#50ffa0;">Usługi</a>
-          <a href="#kontakt"  style="font-size:13px;color:#3a6050;text-decoration:none;transition:color 0.2s;" style-hover="color:#50ffa0;">Kontakt</a>
+          <a data-footer-text href="#o-firmie" style="font-size:13px;color:#3a6050;text-decoration:none;transition:color 0.2s;" style-hover="color:#50ffa0;">O firmie</a>
+          <a data-footer-text href="#uslugi"   style="font-size:13px;color:#3a6050;text-decoration:none;transition:color 0.2s;" style-hover="color:#50ffa0;">Usługi</a>
+          <a data-footer-text href="#kontakt"  style="font-size:13px;color:#3a6050;text-decoration:none;transition:color 0.2s;" style-hover="color:#50ffa0;">Kontakt</a>
         </div>
       </div>
 
       <div style="flex:1.4;min-width:0;">
-        <div style="font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#1e3028;margin-bottom:18px;">Kontakt</div>
+        <div data-footer-heading style="font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#1e3028;margin-bottom:18px;">Kontakt</div>
         <div style="display:flex;flex-direction:column;gap:9px;">
-          <a href="tel:+48503191703" style="font-size:13px;color:#3a6050;text-decoration:none;transition:color 0.2s;" style-hover="color:#50ffa0;">+48 503 191 703</a>
-          <a href="mailto:tomasztempczyk@gmail.com" style="font-size:13px;color:#3a6050;text-decoration:none;word-break:break-all;transition:color 0.2s;" style-hover="color:#50ffa0;">tomasztempczyk@gmail.com</a>
-          <div style="font-size:13px;color:#3a6050;line-height:1.65;">ul. Wojska Polskiego 76<br>05-822 Milanówek</div>
+          <a data-footer-text href="tel:+48503191703" style="font-size:13px;color:#3a6050;text-decoration:none;transition:color 0.2s;" style-hover="color:#50ffa0;">+48 503 191 703</a>
+          <a data-footer-text href="mailto:tomasztempczyk@gmail.com" style="font-size:13px;color:#3a6050;text-decoration:none;word-break:break-all;transition:color 0.2s;" style-hover="color:#50ffa0;">tomasztempczyk@gmail.com</a>
+          <div data-footer-text style="font-size:13px;color:#3a6050;line-height:1.65;">ul. Wojska Polskiego 76<br>05-822 Milanówek</div>
         </div>
       </div>
 
     </div>
 
     <div style="padding-top:28px;border-top:1px solid rgba(80,255,160,0.05);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
-      <div style="font-size:12px;color:#162420;">© {{ currentYear }} T-LogicWorks Tomasz Tempczyk. Wszelkie prawa zastrzeżone.</div>
-      <div style="font-size:12px;color:#162420;">
-        Strona stworzona przez: <a href="https://drawninstars.art/" target="_blank" rel="noopener noreferrer" aria-label="Strona drawninstars.art – twórca strony" style="color:#243c30;text-decoration:none;border-bottom:1px solid rgba(80,255,160,0.15);padding-bottom:1px;transition:color 0.2s,border-color 0.2s;" style-hover="color:#50ffa0;border-bottom-color:rgba(80,255,160,0.4);">drawninstars.art</a>
+      <div data-footer-copy style="font-size:12px;color:#162420;">© {{ currentYear }} T-LogicWorks Tomasz Tempczyk. Wszelkie prawa zastrzeżone.</div>
+      <div data-footer-copy style="font-size:12px;color:#162420;">
+        Strona stworzona przez: <a data-footer-credit-link href="https://drawninstars.art/" target="_blank" rel="noopener noreferrer" aria-label="Strona drawninstars.art – twórca strony" style="color:#243c30;text-decoration:none;border-bottom:1px solid rgba(80,255,160,0.15);padding-bottom:1px;transition:color 0.2s,border-color 0.2s;" style-hover="color:#50ffa0;border-bottom-color:rgba(80,255,160,0.4);">drawninstars.art</a>
       </div>
     </div>
 
